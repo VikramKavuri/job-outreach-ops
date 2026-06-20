@@ -1,6 +1,6 @@
 # Architecture
 
-ContextReach is a single, manual-triggered n8n workflow. Google Sheets holds the work request and lifecycle state; external providers perform search, model inference, profile enrichment, and draft storage. The architecture deliberately ends before email delivery.
+Job Outreach Ops is a single, manual-triggered n8n workflow. Google Sheets holds the work request and lifecycle state; external providers perform search, model inference, profile enrichment, and draft storage. The architecture deliberately ends before email delivery.
 
 ## Runtime sequence
 
@@ -82,7 +82,7 @@ flowchart TB
     Model --> DraftOnly --> Mail --> Review
 ```
 
-Search snippets and enrichment data are untrusted. They may be stale, incomplete, malformed, or adversarial. ContextReach restricts ranking to supplied URLs, truncates profile context, uses low-temperature prompts, and requires human review. Those controls reduce risk; they do not establish factual truth.
+Search snippets and enrichment data are untrusted. They may be stale, incomplete, malformed, or adversarial. Job Outreach Ops restricts ranking to supplied URLs, truncates profile context, uses low-temperature prompts, and requires human review. Those controls reduce risk; they do not establish factual truth.
 
 ## Work and cost envelope
 

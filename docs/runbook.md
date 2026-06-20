@@ -4,7 +4,7 @@
 
 1. Rotate the Google CSE and Apify credentials that appeared in the original artifact.
 2. Set all variables from `.env.example` in the n8n runtime or secret manager.
-3. Import `workflows/contextreach.json`; keep it inactive.
+3. Import `workflows/job-outreach-ops.json`; keep it inactive.
 4. Bind local Google Sheets OAuth2, Gmail OAuth2, and Gemini credentials.
 5. Confirm that all three audience Gmail nodes show the **Draft** resource.
 6. Confirm the spreadsheet and worksheet selectors resolve correctly.

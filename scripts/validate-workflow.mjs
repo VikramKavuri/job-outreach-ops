@@ -3,7 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-const workflowPath = resolve(process.argv[2] ?? 'workflows/contextreach.json');
+const workflowPath = resolve(process.argv[2] ?? 'workflows/job-outreach-ops.json');
 const raw = await readFile(workflowPath, 'utf8');
 const errors = [];
 let workflow;

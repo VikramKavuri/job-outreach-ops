@@ -63,7 +63,7 @@ for (const file of files) {
 
 const workflowCheck = spawnSync(
   process.execPath,
-  ['scripts/validate-workflow.mjs', 'workflows/contextreach.json'],
+  ['scripts/validate-workflow.mjs', 'workflows/job-outreach-ops.json'],
   { cwd: root, encoding: 'utf8' },
 );
 

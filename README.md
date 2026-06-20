@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="docs/assets/contextreach-flow.svg" alt="ContextReach: a job row moves through validation, discovery, enrichment, drafting, and human review" width="100%" />
+  <img src="docs/assets/job-outreach-ops-flow.svg" alt="Animated n8n-style workflow showing a validated job row moving through discovery, enrichment, drafting, persistence, and human review" width="100%" />
 
-  # ContextReach
+  # Job Outreach Ops
 
   **Turn a complete job-tracking row into evidence-grounded recruiter, hiring-manager, and peer outreach drafts.**
 
-  [![Repository quality gate](https://github.com/VikramKavuri/context-reach/actions/workflows/ci.yml/badge.svg)](https://github.com/VikramKavuri/context-reach/actions/workflows/ci.yml)
-  [![n8n workflow](https://img.shields.io/badge/workflow-n8n-EA4B71?logo=n8n&logoColor=white)](workflows/contextreach.json)
+  [![Repository quality gate](https://github.com/VikramKavuri/job-outreach-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/VikramKavuri/job-outreach-ops/actions/workflows/ci.yml)
+  [![n8n workflow](https://img.shields.io/badge/workflow-n8n-EA4B71?logo=n8n&logoColor=white)](workflows/job-outreach-ops.json)
   [![License: MIT](https://img.shields.io/badge/license-MIT-2563EB.svg)](LICENSE)
   [![Delivery: drafts only](https://img.shields.io/badge/delivery-drafts%20only-16A34A.svg)](#safety-model)
 
@@ -15,7 +15,7 @@
 
 ---
 
-ContextReach is a portable n8n workflow for deliberate, review-first job outreach. Google Sheets is the control plane: an operator supplies the company, role, location, job description, and resume; ContextReach validates that contract before it spends quota or generates copy.
+Job Outreach Ops is a portable n8n workflow for deliberate, review-first job outreach. Google Sheets is the control plane: an operator supplies the company, role, location, job description, and resume; the workflow validates that contract before it spends quota or generates copy.
 
 It then discovers likely contacts, ranks only the supplied search results, enriches selected profiles, writes audience-specific drafts, persists the result to the original row, and creates Gmail drafts. It does **not** send email automatically.
 
@@ -77,7 +77,7 @@ For the complete 35-node execution graph and the reason each node exists, see th
 
 ## Design principles
 
-ContextReach favors explicit contracts and reviewable behavior over autonomous volume.
+Job Outreach Ops favors explicit contracts and reviewable behavior over autonomous volume.
 
 - **Sheet-first control plane.** The source row contains both the work request and its processing state.
 - **Evidence before generation.** Search discovers candidates; ranking cannot create new URLs; enrichment supplies the context used by draft prompts.
@@ -89,7 +89,7 @@ ContextReach favors explicit contracts and reviewable behavior over autonomous v
 
 ## Safety model
 
-Generative models can still produce incorrect copy. ContextReach reduces that risk; it does not claim to eliminate it.
+Generative models can still produce incorrect copy. Job Outreach Ops reduces that risk; it does not claim to eliminate it.
 
 | Risk | Control |
 |---|---|
@@ -130,7 +130,7 @@ n8n Cloud may restrict `$env` access. If so, replace those expressions through n
 
 ### 2. Import and bind
 
-1. Import [`workflows/contextreach.json`](workflows/contextreach.json) into n8n.
+1. Import [`workflows/job-outreach-ops.json`](workflows/job-outreach-ops.json) into n8n.
 2. Bind local Google Sheets, Gmail, and Gemini credentials.
 3. Keep the workflow inactive until the synthetic verification passes.
 4. Confirm the worksheet follows the [data contract](docs/data-contract.md).
@@ -170,7 +170,7 @@ Use the [operations runbook](docs/runbook.md) before processing personal data.
 │   ├── sanitize-workflow.mjs   # Remove secrets and installation-specific metadata
 │   ├── validate-workflow.mjs   # Enforce graph and workflow invariants
 │   └── validate-repository.mjs # Validate the complete repository surface
-└── workflows/contextreach.json # Portable, inactive n8n workflow export
+└── workflows/job-outreach-ops.json # Portable, inactive n8n workflow export
 ```
 
 ## Known boundaries
@@ -193,4 +193,4 @@ Use the [operations runbook](docs/runbook.md) before processing personal data.
 
 ## License
 
-ContextReach is available under the [MIT License](LICENSE).
+Job Outreach Ops is available under the [MIT License](LICENSE).

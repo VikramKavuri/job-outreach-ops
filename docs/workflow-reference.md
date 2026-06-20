@@ -1,6 +1,6 @@
 # Workflow reference
 
-This document describes the complete executable graph in `workflows/contextreach.json`. All 35 nodes are reachable from `Start Outreach Run`; CI fails if a disconnected node is introduced.
+This document describes the complete executable graph in `workflows/job-outreach-ops.json`. All 35 nodes are reachable from `Start Outreach Run`; CI fails if a disconnected node is introduced.
 
 ## 1. Intake and admission control
 

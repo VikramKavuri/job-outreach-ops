@@ -24,7 +24,7 @@ const groundingPolicy = [
   '- Produce drafts for human review; never imply that an email was sent.',
 ].join('\n');
 
-workflow.name = 'ContextReach: Evidence-Grounded Job Outreach';
+workflow.name = 'Job Outreach Ops: Review-First Outreach Automation';
 workflow.active = false;
 workflow.pinData = {};
 
