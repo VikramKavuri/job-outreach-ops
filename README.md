@@ -19,6 +19,18 @@ Job Outreach Ops is a portable n8n workflow for deliberate, review-first job out
 
 It then discovers likely contacts, ranks only the supplied search results, enriches selected profiles, writes audience-specific drafts, persists the result to the original row, and creates Gmail drafts. It does **not** send email automatically.
 
+## Actual n8n workflow canvas
+
+<p align="center">
+  <a href="docs/assets/n8n-workflow-canvas.png">
+    <img src="docs/assets/n8n-workflow-canvas.png" alt="Full n8n editor canvas showing the outreach automation workflow and connected nodes" width="100%" />
+  </a>
+</p>
+
+<p align="center"><sub>Real workflow canvas from n8n. Click the image to inspect the full-resolution graph; the animated overview above presents the same execution path in a recruiter-readable form.</sub></p>
+
+The version-controlled workflow JSON remains the canonical implementation. The screenshot provides visual evidence of the assembled automation, while CI validates the exported graph itself.
+
 ## How a run actually works
 
 The current workflow starts manually in n8n. Filling a sheet row makes it *eligible*; clicking **Execute workflow** starts the run.
