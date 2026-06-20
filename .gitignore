@@ -1,0 +1,20 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+.npm/
+coverage/
+dist/
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.tmp
+
+# Raw n8n exports may contain credentials or instance metadata.
+exports/
+*_raw.json
+*_unsanitized.json

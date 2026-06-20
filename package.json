@@ -1,0 +1,16 @@
+{
+  "name": "grounded-outreach-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure, grounded, human-reviewed outreach automation for n8n.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-repository.mjs",
+    "validate:workflow": "node scripts/validate-workflow.mjs",
+    "sanitize": "node scripts/sanitize-workflow.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

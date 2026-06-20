@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Grounded outreach automation</title>
+  <desc id="desc">An animated flow from job targets through discovery, grounded AI, and human-reviewed Gmail drafts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="0.52" stop-color="#172554"/>
+      <stop offset="1" stop-color="#2e1065"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.55" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .label{font:600 17px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#f8fafc;text-anchor:middle}
+      .meta{font:500 12px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#94a3b8;text-anchor:middle;letter-spacing:.08em}
+      .node{fill:#0f172a;stroke:#64748b;stroke-width:1.5}
+      .pulse{animation:pulse 2.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      .delay1{animation-delay:.45s}.delay2{animation-delay:.9s}.delay3{animation-delay:1.35s}
+      @keyframes pulse{0%,100%{opacity:.72;transform:scale(.98)}50%{opacity:1;transform:scale(1.035)}}
+      @media (prefers-reduced-motion:reduce){.pulse{animation:none}.packet{display:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="26" fill="url(#bg)"/>
+  <circle cx="1040" cy="30" r="190" fill="#7c3aed" opacity=".10"/>
+  <circle cx="100" cy="350" r="220" fill="#0284c7" opacity=".10"/>
+
+  <text x="600" y="58" class="label" style="font-size:28px">Evidence in. Reviewed outreach out.</text>
+  <text x="600" y="84" class="meta">BOUNDED COST · GROUNDED CLAIMS · HUMAN CONTROL</text>
+
+  <path id="route" d="M150 200 C250 120 320 280 420 200 S590 120 690 200 S860 280 950 200" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+  <path d="M150 200 C250 120 320 280 420 200 S590 120 690 200 S860 280 950 200" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3 14" opacity=".23"/>
+
+  <g class="pulse">
+    <rect class="node" x="70" y="156" width="160" height="88" rx="18"/>
+    <circle cx="150" cy="177" r="6" fill="#38bdf8" filter="url(#glow)"/>
+    <text x="150" y="208" class="label">Job targets</text>
+    <text x="150" y="229" class="meta">GOOGLE SHEETS</text>
+  </g>
+  <g class="pulse delay1">
+    <rect class="node" x="340" y="156" width="160" height="88" rx="18"/>
+    <circle cx="420" cy="177" r="6" fill="#60a5fa" filter="url(#glow)"/>
+    <text x="420" y="208" class="label">Discovery</text>
+    <text x="420" y="229" class="meta">SEARCH + ENRICH</text>
+  </g>
+  <g class="pulse delay2">
+    <rect class="node" x="610" y="156" width="160" height="88" rx="18"/>
+    <circle cx="690" cy="177" r="6" fill="#c084fc" filter="url(#glow)"/>
+    <text x="690" y="208" class="label">Grounded AI</text>
+    <text x="690" y="229" class="meta">STRICT JSON</text>
+  </g>
+  <g class="pulse delay3">
+    <rect class="node" x="870" y="156" width="160" height="88" rx="18" stroke="#4ade80"/>
+    <circle cx="950" cy="177" r="6" fill="#4ade80" filter="url(#glow)"/>
+    <text x="950" y="208" class="label">Human review</text>
+    <text x="950" y="229" class="meta">GMAIL DRAFTS</text>
+  </g>
+
+  <g class="packet" filter="url(#glow)">
+    <circle r="6" fill="#f8fafc">
+      <animateMotion dur="4.6s" repeatCount="indefinite" rotate="auto"><mpath href="#route"/></animateMotion>
+    </circle>
+    <circle r="3" fill="#a5f3fc" opacity=".8">
+      <animateMotion dur="4.6s" begin="-2.3s" repeatCount="indefinite" rotate="auto"><mpath href="#route"/></animateMotion>
+    </circle>
+  </g>
+
+  <text x="600" y="318" class="meta">MANUAL TRIGGER  →  ONE ROW  →  SIX DRAFT LOOPS  →  OPERATOR APPROVAL</text>
+</svg>
