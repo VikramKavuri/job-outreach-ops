@@ -4,9 +4,9 @@
 
 1. Rotate the Google CSE and Apify credentials that appeared in the original artifact.
 2. Set all variables from `.env.example` in the n8n runtime or secret manager.
-3. Import `workflows/outreach-automation.json`; keep it inactive.
+3. Import `workflows/contextreach.json`; keep it inactive.
 4. Bind local Google Sheets OAuth2, Gmail OAuth2, and Gemini credentials.
-5. Confirm that each Gmail node shows the **Draft** resource.
+5. Confirm that all three audience Gmail nodes show the **Draft** resource.
 6. Confirm the spreadsheet and worksheet selectors resolve correctly.
 7. Run `npm run validate` from the repository.
 8. Execute one synthetic row and inspect every external call and write.
@@ -15,7 +15,7 @@
 
 Success means all of the following are true:
 
-- Exactly one eligible row is processed.
+- Exactly the first row with all five required fields and blank `Status` is processed.
 - The correct physical sheet row is updated.
 - Profile claims in draft copy can be traced to input or enrichment data.
 - Candidate achievements can be traced to `My_resume`.
@@ -44,7 +44,7 @@ Do not send the draft. Preserve the execution ID, identify whether the fault cam
 
 ### Wrong sheet row updated
 
-Stop executions and restore affected cells from sheet version history. Verify the `Filter Unprocessed Rows` node preserves `row_number` before filtering. Do not bulk rerun until a single interleaved processed/unprocessed test passes.
+Stop executions and restore affected cells from sheet version history. Verify the `Validate Job Intake` node preserves `row_number` before filtering. Do not bulk rerun until a single interleaved processed/unprocessed test passes.
 
 ### Provider outage or rate limit
 

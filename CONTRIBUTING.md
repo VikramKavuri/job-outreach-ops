@@ -7,7 +7,7 @@
 3. Sanitize the export before review:
 
    ```powershell
-   node scripts/sanitize-workflow.mjs path/to/export.json workflows/outreach-automation.json
+   node scripts/sanitize-workflow.mjs path/to/export.json workflows/contextreach.json
    ```
 
 4. Run `npm run validate`.

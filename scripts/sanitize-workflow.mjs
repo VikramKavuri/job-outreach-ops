@@ -24,7 +24,7 @@ const groundingPolicy = [
   '- Produce drafts for human review; never imply that an email was sent.',
 ].join('\n');
 
-workflow.name = 'Production Outreach Automation';
+workflow.name = 'ContextReach: Evidence-Grounded Job Outreach';
 workflow.active = false;
 workflow.pinData = {};
 
@@ -96,8 +96,8 @@ return unprocessed;`;
   }
 
   if (node.type === '@n8n/n8n-nodes-langchain.googleGemini') {
-    const isSearch = node.name === 'Search LinkedIn Profiles';
-    const isRecruiter = node.name.startsWith('Gemini - Recruiters');
+    const isSearch = ['Search LinkedIn Profiles', 'Rank Contact Candidates'].includes(node.name);
+    const isRecruiter = node.name.startsWith('Gemini - Recruiters') || node.name === 'Draft Recruiter Outreach';
     node.parameters.options = {
       ...(node.parameters.options ?? {}),
       temperature: isSearch ? 0.1 : 0.2,

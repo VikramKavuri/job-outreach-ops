@@ -13,9 +13,9 @@ The workflow treats the first worksheet row as headers. Header matching for core
 | `Job Link` | Recommended | Source-of-truth job reference |
 | `Job Description` | Yes | Role requirements used for matching |
 | `My_resume` | Yes | Resume summary used as the only source for candidate claims |
-| `Recruiter1_name` | State field | Blank means the row is eligible for processing |
+| `Status` | Yes | Must be blank for admission; becomes `In Progress`, then `Drafted` |
 
-The workflow accepts common aliases such as `Company`, `Title`, `JD`, and `My Resume`, but downstream generated columns use fixed names.
+The workflow accepts common aliases such as `Company`, `Title`, `JD`, and `My Resume`, but downstream generated columns use fixed names. A row is ready only when company, title, location, job description, and resume are populated and `Status` is blank.
 
 ## Generated contact fields
 
